@@ -58,14 +58,14 @@ def doRecommendations(username):
     pred_sum_df = pd.DataFrame(groupby['sentiment_predicted'].sum()).reset_index()
     pred_sum_df.columns = ['id', 'pred_pos_review']
 
-    new_recom = pd.merge(pred_count_df, pred_sum_df, left_on = 'id', right_on = 'id', how = 'left')
+    recommendations = pd.merge(pred_count_df, pred_sum_df, left_on = 'id', right_on = 'id', how = 'left')
 
-    new_recom['positive_sentiment_rate'] = round(new_recom.pred_pos_review.div(new_recom.review_count).replace(np.inf, 0) * 100, 2)
-    new_recom = new_recom.sort_values(by = 'positive_sentiment_rate', ascending = False)
+    recommendations['positive_sentiment_rate'] = round(recommendations.pred_pos_review.div(recommendations.review_count).replace(np.inf, 0) * 100, 2)
+    recommendations = recommendations.sort_values(by = 'positive_sentiment_rate', ascending = False)
 
-    new_recom = pd.merge(new_recom, mapping, left_on = 'id', right_on = 'id', how = 'left')
+    recommendations = pd.merge(recommendations, mapping, left_on = 'id', right_on = 'id', how = 'left')
 
-    products = new_recom.head(20)
+    products = recommendations.head(5)
 
     
     productNameList = products['name'].tolist()
