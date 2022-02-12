@@ -15,6 +15,7 @@ if not os.path.exists(nltk_data_folder):
 
 nltk.download('punkt', download_dir = nltk_data_folder)
 nltk.download('averaged_perceptron_tagger', download_dir = nltk_data_folder)
+nltk.download()
 
 app = Flask(__name__)
 
