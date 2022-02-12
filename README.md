@@ -14,3 +14,5 @@ In order to do this, you planned to build a sentiment-based product recommendati
     2. Building a recommendation system
     3. Improving the recommendations using the sentiment analysis model
     4. Deploying the end-to-end project with a user interface
+
+The recommendation system with Flask app is hosted on https://recommendation-system-c25.herokuapp.com/
