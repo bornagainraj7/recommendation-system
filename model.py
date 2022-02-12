@@ -30,7 +30,7 @@ def doRecommendations(username):
     lr = logistic
     
     try:
-        recommendations = pd.DataFrame(recommendation_model.loc[username]).reset_index()[0 : 20]
+        recommendations = pd.DataFrame(recommendation_model.loc[username]).reset_index()[0 : 50]
     except KeyError:
         errorMessage = f'Hey Mate! we tried hard but couldn\'t find the user "{username}", so we couldn\'t recommend anything \n\
          for "{username}", you can try again by select any of the below username to find their recommendations.'
@@ -42,7 +42,14 @@ def doRecommendations(username):
 
     recommendations = pd.merge(recommendations, mapping, left_on = 'id', right_on = 'id', how = 'left')
 
+    print('mapping')
+    print(recommendations)
+
     recommendations = pd.merge(recommendations, df[['id', 'clean_review']], left_on = 'id', right_on = 'id', how = 'left')
+
+    print('df')
+    print(recommendations['clean_review'])
+
     test_data = tfidf_vectorizer.transform(recommendations['clean_review'].values.astype('U'))
 
     sentiment_pred = lr.predict(test_data)
