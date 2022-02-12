@@ -30,7 +30,7 @@ def doRecommendations(username):
     lr = logistic
     
     try:
-        recommendations = pd.DataFrame(recommendation_model.loc[username]).reset_index().sort_values(by = username, ascending = False)[0 : 20]
+        recommendations = pd.DataFrame(recommendation_model.loc[username]).reset_index()[0 : 20]
     except KeyError:
         errorMessage = f'Hey Mate! we tried hard but couldn\'t find the user "{username}", so we couldn\'t recommend anything \n\
          for "{username}", you can try again by select any of the below username to find their recommendations.'
@@ -38,7 +38,7 @@ def doRecommendations(username):
         return errorMessage, None
     
     recommendations.rename(columns = { recommendations.columns[1]: 'pred_rating' }, inplace = True)
-    # recommendations = recommendations.sort_values(by = 'pred_rating', ascending = False)[0 : 5]
+    recommendations = recommendations.sort_values(by = 'pred_rating', ascending = False)[0 : 5]
 
     recommendations = pd.merge(recommendations, mapping, left_on = 'id', right_on = 'id', how = 'left')
 
