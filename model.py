@@ -1,24 +1,23 @@
 import pandas as pd
 import numpy as np
 import pickle
-import constants
 import os
 
 
 dirname = os.path.dirname(__file__)
 
-logistic_path = os.path.join(dirname, constants.LOGISTIC_REGRESSION_PATH)
-vectorizer_path = os.path.join(dirname, constants.VECTORIZER_PATH)
-recom_model_path = os.path.join(dirname, constants.RECOMMENDER_PATH)
-mapping_path = os.path.join(dirname, constants.MAPPING_PATH)
-df_path = os.path.join(dirname, constants.DF_PATH)
+logistic_path = os.path.join(dirname, 'pickle', 'Logistic_Reg_model.pkl')
+vectorizer_path = os.path.join(dirname, 'pickle', 'Tfidf_vectorizer.pkl')
+recommendation_model_path = os.path.join(dirname, 'pickle', 'user_rating.pkl')
+mapping_path = os.path.join(dirname, 'pickle', 'prod_id_name_mapping.pkl')
+df_path = os.path.join(dirname, 'pickle', 'df.pkl')
 
 
 logistic = pickle.load(file = open(logistic_path, 'rb'))
 
 vectorizer = pickle.load(file = open(vectorizer_path, 'rb'))
 
-recommendation_model = pickle.load(file = open(recom_model_path, 'rb'))
+recommendation_model = pickle.load(file = open(recommendation_model_path, 'rb'))
 
 mapping = pickle.load(file = open(mapping_path, 'rb'))
 

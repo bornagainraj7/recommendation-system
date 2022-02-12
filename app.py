@@ -8,7 +8,7 @@ import os
 
 dirname = os.path.dirname(__file__)
 
-nltk_data_folder = os.path.join(dirname, './data/nltk/') 
+nltk_data_folder = os.path.join(dirname, 'data', 'nltk') 
 
 if not os.path.exists(nltk_data_folder):
     os.makedirs(nltk_data_folder)
