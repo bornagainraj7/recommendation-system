@@ -38,7 +38,7 @@ def doRecommendations(username):
         return errorMessage, None
     
     recommendations.rename(columns = { recommendations.columns[1]: 'pred_rating' }, inplace = True)
-    recommendations = recommendations.sort_values(by = 'pred_rating', ascending = False)[0 : 5]
+    recommendations = recommendations.sort_values(by = 'pred_rating', ascending = False)[0 : 20]
 
     recommendations = pd.merge(recommendations, mapping, left_on = 'id', right_on = 'id', how = 'left')
 
