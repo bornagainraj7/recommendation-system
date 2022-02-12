@@ -12,4 +12,4 @@ cloudpickle==1.2.2
 itsdangerous==1.1.0
 MarkupSafe==1.1.1
 Werkzeug==0.15.5
-cython>=2.6
+cython>=0.29.15
