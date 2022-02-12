@@ -7,12 +7,12 @@ import model
 import os
 
 
-# nltk_data_folder = './data/nltk/'
+nltk_data_folder = './data/nltk/'
 
-# if not os.path.exists(nltk_data_folder):
-#     os.makedirs(nltk_data_folder)
+if not os.path.exists(nltk_data_folder):
+    os.makedirs(nltk_data_folder)
 
-# nltk.download('punkt', download_dir = nltk_data_folder)
+nltk.download('punkt', download_dir = nltk_data_folder)
 
 app = Flask(__name__)
 
