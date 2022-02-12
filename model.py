@@ -42,13 +42,7 @@ def doRecommendations(username):
 
     recommendations = pd.merge(recommendations, mapping, left_on = 'id', right_on = 'id', how = 'left')
 
-    print('mapping')
-    print(recommendations)
-
     recommendations = pd.merge(recommendations, df[['id', 'clean_review']], left_on = 'id', right_on = 'id', how = 'left')
-
-    print('df')
-    print(recommendations['clean_review'])
 
     test_data = tfidf_vectorizer.transform(recommendations['clean_review'].values.astype('U'))
 
