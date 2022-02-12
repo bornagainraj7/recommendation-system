@@ -30,7 +30,7 @@ def doRecommendations(username):
     lr = logistic
     
     try:
-        # limit of 20 added due to memeory issue
+        # limit of 50 added due to memeory issue
         recommendations = pd.DataFrame(recommendation_model.loc[username]).reset_index()[0 : 50]
     except KeyError:
         errorMessage = f'Hey Mate! we tried hard but couldn\'t find the user "{username}", so we couldn\'t recommend anything \n\
