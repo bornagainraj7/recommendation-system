@@ -6,8 +6,8 @@ import os
 
 dirname = os.path.dirname(__file__)
 
-logistic_path = os.path.join(dirname, 'pickle', 'Logistic_Reg_model.pkl')
-vectorizer_path = os.path.join(dirname, 'pickle', 'Tfidf_vectorizer.pkl')
+logistic_path = os.path.join(dirname, 'pickle', 'logistic_reg_model.pkl')
+vectorizer_path = os.path.join(dirname, 'pickle', 'tfidf_vectorizer.pkl')
 recommendation_model_path = os.path.join(dirname, 'pickle', 'user_rating.pkl')
 mapping_path = os.path.join(dirname, 'pickle', 'prod_id_name_mapping.pkl')
 df_path = os.path.join(dirname, 'pickle', 'df.pkl')
