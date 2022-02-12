@@ -6,12 +6,6 @@ import nltk
 import model
 import os
 
-dirname = os.path.dirname(__file__)
-
-nltk_data_folder = os.path.join(dirname, 'data', 'nltk') 
-
-if not os.path.exists(nltk_data_folder):
-    os.makedirs(nltk_data_folder)
 
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
