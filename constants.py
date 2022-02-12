@@ -1,0 +1,5 @@
+RECOMMENDER_PATH = './pickle/user_rating.pkl'
+LOGISTIC_REGRESSION_PATH = './pickle/Logistic_Reg_model.pkl'
+VECTORIZER_PATH = './pickle/Tfidf_vectorizer.pkl'
+MAPPING_PATH = './pickle/prod_id_name_mapping.pkl'
+DF_PATH = './pickle/df.pkl'
