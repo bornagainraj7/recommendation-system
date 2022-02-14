@@ -15,4 +15,4 @@ In order to do this, you planned to build a sentiment-based product recommendati
     3. Improving the recommendations using the sentiment analysis model
     4. Deploying the end-to-end project with a user interface
 
-The recommendation system with Flask app is hosted on https://recommendation-system-c25.herokuapp.com/
+The recommendation system with Flask app is hosted on Heroku at https://recommendation-system-c25.herokuapp.com/. If you're requesting it for the first time give it sometime as Heroku might have shut down the server so it'll take lil time to boot up.
